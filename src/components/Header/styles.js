@@ -19,14 +19,7 @@ export const HeaderArea = styled.header`
         align-items: center;
         height: 70px;
         .link{
-            span{
-                font-weight: bold;
-                font-size: 2em;
-                letter-spacing: 3px;
-            }
-            span:nth-child(1){ color: #ff0000; }
-            span:nth-child(2){ color: #00ff00; }
-            span:nth-child(3){ color: #0000ff; }
+            
         } 
     }
     nav{

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Template } from "./components/MainComponents/MainComponents";
+import { Template } from "./components/MainComponents";
 import { MainRoutes } from "./routers/MainRoutes";
 
 import Header from "./components/Header";
