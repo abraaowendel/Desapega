@@ -1,10 +1,16 @@
 import * as C from "./styles"
 import { Link } from "react-router-dom";
-import { isLogged } from "../../helpers/auth/AuthHandler";
+import { doLogout, isLogged } from "../../helpers/auth/AuthHandler";
 import Logo from "../../assets/svgs/logo.svg"
 
 const Header = () => {
     let logged = isLogged();
+
+    const handeLogout = () => {
+      doLogout()
+       window.location.href = "/signin"
+    }
+
     return (
         <C.HeaderArea>
             <div className="container">
@@ -24,7 +30,7 @@ const Header = () => {
                             <Link to="/post-and-ad" className="button">Poste um anuncio</Link>
                           </li>
                           <li>
-                            <Link to="/logout">Sair</Link>
+                            <button onClick={handeLogout}>Sair</button>
                           </li>
                         </>
                         }

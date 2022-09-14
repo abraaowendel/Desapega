@@ -18,9 +18,6 @@ export const HeaderArea = styled.header`
         display: flex;
         align-items: center;
         height: 70px;
-        .link{
-            
-        } 
     }
     nav{
         padding: 10px 0;
@@ -33,7 +30,10 @@ export const HeaderArea = styled.header`
             height: 50px;
             li{
                 margin: 0 20px;
-                a{
+                a, button{
+                    outline: none;
+                    border: 0;
+                    cursor: pointer;
                     color: #000;
                     font-size: 15px;
                     transition: .2s all ease-in;

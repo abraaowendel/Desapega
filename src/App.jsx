@@ -1,17 +1,17 @@
 import { useSelector } from "react-redux";
-import { Template } from "./components/MainComponents";
+import { PageContainer, Template } from "./components/MainComponents";
 import { MainRoutes } from "./routers/MainRoutes";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const App = () => {
-  const user = useSelector((state) => state.user)
-  
+const App = () => {  
   return (
     <Template>
       <Header/>
-      <MainRoutes/>
+      <PageContainer>
+        <MainRoutes/>
+      </PageContainer>
       <Footer/>
     </Template>
   );

@@ -1,6 +1,6 @@
 
 import * as C from "./styled"
-import { PageContainer, PageTitle } from "../../components/MainComponents";
+import { ErrorMessage, PageContainer, PageTitle } from "../../components/MainComponents";
 import { useState } from "react";
 import useApi from "../../helpers/DesapegaAPI"
 import { doLogin } from "../../helpers/auth/AuthHandler";
@@ -10,14 +10,13 @@ const Login = () => {
 
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
-    const [rememberPassword, setRememberPassword] = useState("")
+    const [rememberPassword, setRememberPassword] = useState(false)
     const [disable, setDisable] = useState(false)
     const [error, setError] = useState("")
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         setDisable(true)
-
         const json = await api.login(email, password)
 
         if(json.error){
@@ -27,40 +26,67 @@ const Login = () => {
             doLogin(json.token, rememberPassword)
             window.location.href = "/"
         }
-    }
+        
+        setDisable(false)
 
-    return (
-        <PageContainer>
-            <PageTitle>Login</PageTitle>
-            <C.PageArea>
+    }
+    
+    return (           
+        <C.PageArea>   
+            <div className="box">
+                <PageTitle>Login</PageTitle>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="" className="area">
-                        <div className="area--title">E-mail</div>
+                    <label htmlFor="email" className="area">
+                        <div className="area--title">Seu e-mail</div>
                         <div className="area--input">
-                            <input type="email" disabled={disable}/>
+                            <input 
+                            type="email"
+                            id="email" 
+                            disabled={disable}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="E-mail"
+                            required
+                            />
                         </div>
                     </label>
-                    <label htmlFor="" className="area">
-                        <div className="area--title">Senha</div>
+                    <label htmlFor="password" className="area">
+                        <div className="area--title">Sua senha</div>
                         <div className="area--input">
-                            <input type="password" disabled={disable}/>
+                            <input 
+                            type="password"
+                            id="password"
+                            disabled={disable}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Senha"
+                            required
+                            />
                         </div>
                     </label>
-                    <label htmlFor="" className="area">
+                    <label htmlFor="checked" className="area--check">     
                         <div className="area--title">Lembrar senha</div>
                         <div className="area--input">
-                            <input type="checkbox" disabled={disable}/>
+                            <input 
+                            type="checkbox"
+                            id="checked"
+                            disabled={disable}
+                            checked={rememberPassword}
+                            onChange={() => setRememberPassword(!rememberPassword)}
+                            />
                         </div>
                     </label>
                     <label htmlFor="" className="area">
-                        <div className="area--title"></div>
                         <div className="area--input">
                             <button disabled={disable}>Fazer Login</button>
                         </div>
                     </label>
                 </form>
-            </C.PageArea>
-        </PageContainer>
+            </div>
+            {error &&
+                <ErrorMessage>{error}</ErrorMessage>
+            }
+        </C.PageArea>
     );
 }
  

@@ -1,60 +1,88 @@
 import styled from 'styled-components';
 
 export const PageArea = styled.div`
-    form{
-        background-color: #fff;
-        border-radius: 5px;
+    margin: 35px 0;
+    .box{
+        max-width: 500px;
+        margin: 10px auto;
+        min-height: 420px;
+        background-color: #FFF;
         box-shadow: 0 0 3px #999;
+        h1{
+            text-align: center;
+            padding: 30px 0 10px;
+            color: #DF7229;
+            border-bottom: 1px solid #DF7229;
+            margin: 10px 40px;
+        }
+        form{
+            .area--check{
+                display: flex;
+                justify-content: end;
+                padding: 0px 40px;
+                margin-top: 20px;
+                .area--input{
+                    input{
+                        accent-color: #DF7229;
+                        cursor: pointer;
+                    }
+                }      
+                .area--title{
+                    cursor: pointer;
 
-        .area{
-            display: flex;
-            align-items: center;
-            max-width: 500px;
-            padding: 10px;
-
-            .area--title{
-                width: 200px;
-                padding-right: 10px;
-                text-align: right;
-                font-weight: 700;
-                font-size: 14px;
+                    user-select: none;
+                    margin-right: 6px;
+                    font-size: 14.8px;
+                    color: #798082;
+                }     
             }
+            .area{
+                display: flex;
+                flex-direction: column;
+                padding: 0px 40px;
+                width: 100%;
+                .area--title{
+                    color: #DF7229;
+                    margin: 15px 0 10px;
+                    font-weight: 700;
+                    font-size: 15px;
+                }
 
-            .area--input{
-                flex: 1;
-                input{
-                    width: 100%;
-                    padding: 8px 5px; 
-                    border: 1px solid #DDD;
-                    outline: none;
-                    transition: all ease .3s;
-                    border-radius: 5px;
-
-                    &:focus{
-                        border-color:  #333;
+                .area--input{
+                    input{
+                        width: 100%;
+                        padding: 12px 8px; 
+                        border: 1px solid #CCC;
+                        outline: none;
+                        transition: all ease .3s;
+                        border-radius: 5px;
+                        &:focus{
+                            border-color: #DF7229;
+                        }
+                        &::placeholder{
+                            font-size: 15px;
+                        }
                     }
                 }
-                input[type=checkbox]{                    
-                    width: auto;
-                    margin-top: 7px;
-                    border-radius: 15px;
-                    
+                button{
+                    margin: 20px auto;
+                    width: 100%;
+                    cursor: pointer;
+                    background-color: #DF7229;
+                    border: 0;
+                    outline: 0;
+                    padding: 10px;
+                    color:#FFF;
+                    font-size: 15px;
+                    border-radius: 3px;
+                    transition: all ease .2s;
+                    &:hover{
+                        opacity: 0.9;
+                    }
                 }
             }
-            button{
-                cursor: pointer;
-                background-color: #0089FF;
-                border: 0;
-                outline: 0;
-                padding: 6px 10px;
-                color:#FFF;
-                font-size: 14px;
-                border-radius: 3px;
-            }
-        }
-
     }
-    
+
     
 `;
 
