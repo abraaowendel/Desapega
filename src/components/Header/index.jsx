@@ -7,8 +7,8 @@ const Header = () => {
     let logged = isLogged();
 
     const handeLogout = () => {
-      doLogout()
-       window.location.href = "/signin"
+       doLogout();
+       window.location.href = "/signin";
     }
 
     return (

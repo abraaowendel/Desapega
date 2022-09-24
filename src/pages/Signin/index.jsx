@@ -15,8 +15,9 @@ const Login = () => {
     const [error, setError] = useState("")
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         setDisable(true)
+        setError('')
         const json = await api.login(email, password)
 
         if(json.error){
