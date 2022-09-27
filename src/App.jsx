@@ -9,9 +9,7 @@ const App = () => {
   return (
     <Template>
       <Header/>
-      <PageContainer>
-        <MainRoutes/>
-      </PageContainer>
+      <MainRoutes/>
       <Footer/>
     </Template>
   );

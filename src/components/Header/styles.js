@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderArea = styled.header`
-    background-color: #f0f0f0;
+    background-color: #fff;
     border-bottom: 1px solid #cecece;
     height: 70px;
     a{
@@ -37,6 +37,7 @@ export const HeaderArea = styled.header`
                     color: #000;
                     font-size: 15px;
                     transition: .2s all ease-in;
+                    background-color: transparent;
                     &:hover{
                         color: #999;
                     }

@@ -8,48 +8,58 @@ export const PageArea = styled.div`
         min-height: 420px;
         background-color: #FFF;
         box-shadow: 0 0 3px #999;
-        h1{
-            text-align: center;
-            padding: 30px 0 10px;
-            color: #DF7229;
-            border-bottom: 1px solid #DF7229;
-            margin: 10px 40px;
-        }
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 5px;
         form{
+            .category{
+                display: flex;
+                    select{
+                        display: block;
+                        height: 20px;
+                        width: 20px;
+                        margin: 6px 0 0;
+                    }
+            }
             .area--check{
                 display: flex;
-                justify-content: end;
+                align-items: center;
+                justify-content: start;
                 padding: 0px 40px;
-                margin-top: 20px;
+                margin: 20px 0;
                 .area--input{
                     input{
                         accent-color: #DF7229;
                         cursor: pointer;
+                        margin-left: 10px;
+                        margin-top: 8px;
                     }
                 }      
                 .area--title{
                     cursor: pointer;
-
                     user-select: none;
-                    margin-right: 6px;
                     font-size: 14.8px;
-                    color: #798082;
+                    color: #E57700;
                 }     
             }
+          
             .area{
-                display: flex;
-                flex-direction: column;
+                display: block;
                 padding: 0px 40px;
-                width: 100%;
                 .area--title{
                     color: #DF7229;
                     margin: 15px 0 10px;
                     font-weight: 700;
-                    font-size: 15px;
+                    font-size: 16px;
+                    min-width: 90px;
+                    text-align: start;
                 }
 
                 .area--input{
-                    input{
+                    input,textarea, option{
+                        display: block;
+                        flex: 1;
+                        resize: none;
                         width: 100%;
                         padding: 12px 8px; 
                         border: 1px solid #CCC;
@@ -65,6 +75,7 @@ export const PageArea = styled.div`
                     }
                 }
                 button{
+                    display: block;
                     margin: 20px auto;
                     width: 100%;
                     cursor: pointer;
@@ -80,9 +91,30 @@ export const PageArea = styled.div`
                         opacity: 0.9;
                     }
                 }
-            }
+                textarea{
+                    flex: 1;
+                    min-height: 200px;
+                }
+                .category{
+                    display: flex;
+                    align-items: center;
+                    select{
+                        display: block;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }      
+        }   
     }
-}
-    
 `;
 
+
+
+export const PageTitle = styled.h2`
+    margin: 10px 0 30px;
+    color: #DF7229;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DF7229;
+         
+`;
