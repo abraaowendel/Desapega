@@ -1,4 +1,5 @@
 import { useRoutes } from "react-router-dom"
+
 import Home from "../pages/Home"
 import NotFound from "../pages/NotFound"
 import About from "../pages/About"
@@ -7,6 +8,8 @@ import Register from "../pages/Signup"
 import AdPage from "../pages/AdPage"
 import RouteHandler from "../helpers/RouterHandler"
 import AddAd from "../pages/AddAd"
+import Ads from "../pages/Ads"
+
 
 export const MainRoutes = () => {
     return useRoutes([
@@ -19,6 +22,7 @@ export const MainRoutes = () => {
                 <AddAd /> 
             </RouteHandler>},
          {path: "/ad/:id", element: <AdPage/>},
+         {path: "/ads", element: <Ads/>},
          {path: "*", element: <NotFound/>},
     ])
 }

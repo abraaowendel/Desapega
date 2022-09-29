@@ -48,9 +48,8 @@ const Home = () => {
             <PageContainer>
                 <div className="searchBox">
                     <form action="/ads" method="get">
-                        <input type="text" name="q" placeholder="O que você precisa"/>
-                        <select name="" id="">
-                            <option value=""></option>
+                        <input type="text" name="q" placeholder="O que você precisa?"/>
+                        <select name="state" id="">
                             {stateList?.map((item, key) => (
                                 <option key={key} value={item._id}>{item.name}</option>
                             ))}

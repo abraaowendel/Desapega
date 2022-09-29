@@ -9,7 +9,7 @@ import * as C from "./styled";
 
 
 
-const AddAd = () => {
+const Ads = () => {
 
     const api = useApi();
     const navigate = useNavigate();
@@ -178,4 +178,4 @@ const AddAd = () => {
     );
 }
  
-export default AddAd;
+export default Ads;
