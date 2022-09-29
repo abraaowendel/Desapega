@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 export const PageArea = styled.div`
    display: flex;
-   margin-top: 10px;
+   margin-top: 30px;
+   gap: 25px;
    min-height: calc(100vh - 120px);
    .leftSide{
         width: 250px;
@@ -52,6 +53,15 @@ export const PageArea = styled.div`
 
    .rigthSide{
         flex: 1;
+        h2{
+            margin-bottom: 20px;
+        }
+        .adItems{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+
+        }
    }
 
 `;

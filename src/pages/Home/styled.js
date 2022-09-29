@@ -57,7 +57,6 @@ export const SearchArea = styled.div`
         }
     }
     .categoryList{
-       
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -100,8 +99,13 @@ export const PageArea = styled.div`
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
-        gap: 10px;
+        gap: 25px 0px;
+        div{
+            flex: 1;
+            width: 100%;
+        }
     }
+   
     h2{
         font-size: 25px;
         margin-top: 20px;

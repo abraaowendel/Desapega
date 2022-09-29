@@ -72,7 +72,9 @@ const Home = () => {
                 <h2>Anúncios recentes</h2>
                 <div className="list">
                     {adList?.map((item, key) => (
-                        <AdItem key={key} data={item}/>
+                        <div>
+                            <AdItem key={key} data={item}/>
+                        </div>
                     ))}
                 </div>
                 <Link to="/ads" className="seeAllLink">Ver todos</Link>
